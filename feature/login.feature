@@ -36,3 +36,7 @@
     Scenario:Esqueceu usuário
     Ideia geral: Usuário se esquece do usuaio e selecione a opção de recuperar o usuário.
     Then leva-o para outra página para recuperar o usuaio.
+
+    Scenario: Tentativa de login com e-mail não cadastrado
+    Ideia geral: Após tentar realizar o login com um e-mail não cadastrado, 
+    Then o usuário é impedido de realizar o login.
