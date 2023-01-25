@@ -46,3 +46,10 @@
         And o usuário é redirecionado para uma página de recuperação de conta que vai pedir o codigo enviado ao email do usuário. 
         When o codigo fo validado 
         Then  definida uma nova senha para o usuário
+
+    Scenario: Mudança de nome do usuario
+        Given o usuario "Rafael" quer mudar o nome para "Leo"
+        When seleciona a opção de mudar de nome
+        Then o sistema abre um pop-up que pede para colocar o nome novo 
+        And a senha 
+        Then é confirmado o nome novo
