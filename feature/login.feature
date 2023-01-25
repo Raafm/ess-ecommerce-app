@@ -53,7 +53,3 @@
         Then o sistema abre um pop-up que pede para colocar o nome novo 
         And a senha 
         Then é confirmado o nome novo
-    Repao
-    Repao
-    Repao
-    
