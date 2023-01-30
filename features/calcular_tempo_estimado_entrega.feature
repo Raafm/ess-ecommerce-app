@@ -19,5 +19,4 @@ Feature: Calcular tempo estimado de entrega
     And eu estou na na página "minhas compras"
     When eu seleciona a opção "a caminho"
     And eu seleciono a compra "iphone X"
-    Then ele consegue visualizar na compra "iphone x" a localização "Recife/PE", bem como todo seu histórico de movimentação
-    And 
+    Then ele vejo na tela a compra "iphone x" a localização "Recife/PE", bem como todo seu histórico de movimentação
