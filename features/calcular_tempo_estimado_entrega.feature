@@ -19,4 +19,11 @@ Feature: Calcular tempo estimado de entrega
     And eu estou na na página "minhas compras"
     When eu seleciona a opção "a caminho"
     And eu seleciono a compra "iphone X"
-    Then ele vejo na tela a compra "iphone x" a localização "Recife/PE", bem como todo seu histórico de movimentação
+    Then eu vejo na tela a compra "iphone x" a localização "Recife/PE", bem como todo seu histórico de movimentação
+
+  Scenario: Ver detalhes do status de um pedido - Falha
+    Given eu estou logado como o user "userMV" e senha "1234"
+    And eu estou na na página "minhas compras"
+    When eu seleciona a opção "a caminho"
+    And eu seleciono a compra "iphone X"
+    Then eu vejo uma mensagem de erro "compra não pode ser rastreada"
