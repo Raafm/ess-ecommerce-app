@@ -33,3 +33,9 @@ Feature: Calcular tempo estimado de entrega
     And eu estou na página de "minhas compras"
     When eu seleciono a opção "enviado"
     Then eu vejo na tela a compra "iphone x" e o tempo estimado de entrega de "Sem tempo estimado"
+
+  Scenario: Visualização do tempo de entrega no detalhamento de um pedido - Falha
+    Given eu estou logado como o user "userMV" e senha "1234"
+    And eu estou na página de "minhas compras"
+    When eu seleciono a opção "enviado"
+    Then eu vejo na tela a compra "iphone x" e o tempo estimado de entrega de "Sem tempo estimado"
