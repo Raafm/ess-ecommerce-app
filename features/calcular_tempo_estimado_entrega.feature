@@ -21,15 +21,15 @@ Feature: Calcular tempo estimado de entrega
     And eu seleciono a compra "iphone X"
     Then eu vejo na tela a compra "iphone x" a localização "Recife/PE", bem como todo seu histórico de movimentação
 
-  Scenario: Ver detalhes do status de um pedido - Falha
-    Given eu estou logado como o user "userMV" e senha "1234"
-    And eu estou na na página "minhas compras"
-    When eu seleciona a opção "a caminho"
-    And eu seleciono a compra "iphone X"
-    Then eu vejo uma mensagem de erro "compra não pode ser rastreada"
-
   Scenario: Visualização do tempo de entrega no detalhamento de um pedido - Falha
     Given eu estou logado como o user "userMV" e senha "1234"
     And eu estou na página de "minhas compras"
     When eu seleciono a opção "enviado"
     Then eu vejo na tela a compra "iphone x" e o tempo estimado de entrega de "Sem tempo estimado"
+
+  Scenario: Ver detalhes do status de um pedido - Falha
+    Given eu estou logado como o user "userMV" e senha "1234"
+    And eu estou na na página "minhas compras"
+    When eu seleciona a opção "a caminho"
+    And eu seleciono a compra "iphone X"
+    Then eu vejo uma mensagem de erro "compra não tempo estimado de entrega"
