@@ -1,30 +1,45 @@
-    Cenário de GUI
-    Scenario: Login Correto
-        Given Estou na pagina "Inicial" da aplicação sem estar logado
-        When Eu preencho o campo de login, com o "Usuario" e "Senha" corretos e confirmo
-        Then o usuario recebe um pop up inicando que o login foi realizado com sucesso
-        And é direcionado para a página do usuario
+Feature: Login no aplicativo
+    As a usuario do aplicativo
+    I want to entrar no aplicativo com meu e-mail e senha cadastrado
+    So that eu tenha acesso às funcionalidades do sistema que são acessíveis somente depois do login
 
-    Cenário de Serviço
-    Scenario: Login Correto
-        Given o usuario "Rafael" não está logado
-        When o usuario preenche os campos de "Usuario" com o "Email" ou entao com "Nome"
-        And preenche o campo de senha com a senha correta e confirma
-        Then o usuario realiza o login
+Cenário de GUI
+Scenario: Login Correto
+    Given Estou na pagina "Inicial" da aplicação sem estar logado
+    When Eu preencho o campo de login, com o "Usuario" e "Senha" corretos e confirmo
+    Then o usuario recebe um pop up inicando que o login foi realizado com sucesso
+    And é direcionado para a página do usuario
 
-    Cenario de GUI
-    Scenario: Login incorreto
-        Given  usuario e "Rafael" stá na pagina "Inicial" da aplicação e Deslogado
-        When o usuario preenche o campo de usuario ou de senha de forma errada
-        Then uma "mensagem de erro" indica que o login não foi realizado
-        And pede para repertir o login
+Cenário de Serviço
+Scenario: Login Correto
+    Given o usuario "Rafael" não está logado
+    When o usuario preenche os campos de "Usuario" com o "Email" ou entao com "Nome"
+    And preenche o campo de senha com a senha correta e confirma
+    Then o usuario realiza o login
 
-    Cenário de Serviço
-    Scenario:  Login incorreto
-        Given o usuario "Rafael" está deslogado e tenta logar
-        When preenche errado um dos campos de "Usuario" ou de "Senha"
-        Then o sistema não realiza o login do usuario "Rafael"
+Cenario de GUI
+Scenario: Login incorreto
+    Given  usuario e "Rafael" está na pagina "Inicial" da aplicação e Deslogado
+    When o usuario preenche o campo de usuario ou de senha de forma errada
+    Then uma "mensagem de erro" indica que o login não foi realizado
+    And pede para repertir o login
 
+Cenário de Serviço
+Scenario:  Login incorreto
+    Given o usuario "Rafael" está deslogado e tenta logar
+    When preenche errado um dos campos de "Usuario" ou de "Senha"
+    Then o sistema não realiza o login do usuario "Rafael"
+
+Cenário de GUI
+    Scenario: Esqueceu a senha
+        Given o usuario "Rafael" está na pagina "Inicial" da aplicação, sem estar logado
+        When o usuario clica na opção, esqueci a senha
+        Then o sistema o leva para uma nova página, pedindo o seu email ou usuario
+        And envia para o email um link para mudar a senha 
+
+Cenario de Serviço
+# Todo Login dos fornecedores(Add no Login correto), Login realizado com sucesso(Ok) , tentativa de login com email nao cadstrado(Add no login incorreto)
+#, tentativa de login com senha incorreta(Add no Login Incoreto), Redefinicao de senha(Falta). 
 
 Scenario: Login incorreto
 Ideia geral:Usuário preenche os dados de login de forma incorreta, 
