@@ -25,38 +25,32 @@
         When preenche errado um dos campos de "Usuario" ou de "Senha"
         Then o sistema não realiza o login do usuario "Rafael"
 
-    Scenario: Login incorreto
-        Ideia geral:Usuário preenche os dados de login de forma incorreta, 
-        levando a repetir a página de acesso com um spam de um pop up, indicando login incorreto
+
+Scenario: Login incorreto
+Ideia geral:Usuário preenche os dados de login de forma incorreta, 
+levando a repetir a página de acesso com um spam de um pop up, indicando login incorreto
     
-    Scenario:Esqueceu senha
-        Ideia geral: Usuário se esquece da senha e seleciona a opção de recuperar a senha. 
-        Then leva-o para outra página para recuperar a senha
-    
-    Scenario:Esqueceu usuário
-        Ideia geral: Usuário se esquece do usuaio e selecione a opção de recuperar o usuário.
-        Then leva-o para outra página para recuperar o usuaio.
+Scenario:Esqueceu senha
+Ideia geral: Usuário se esquece da senha e seleciona a opção de recuperar a senha. 
+Then leva-o para outra página para recuperar a senha
 
-    Scenario: Tentativa de login com e-mail não cadastrado
-        Ideia geral: Após tentar realizar o login com um e-mail não cadastrado, 
-        Then o usuário é impedido de realizar o login.
+Scenario:Esqueceu usuário
+Ideia geral: Usuário se esquece do usuaio e selecione a opção de recuperar o usuário.
+Then leva-o para outra página para recuperar o usuaio.
 
-    Scenario: Redefinição de senha
-        Ideia geral: Após selecionar a opção recuperar conta, 
-        And o usuário é redirecionado para uma página de recuperação de conta que vai pedir o codigo enviado ao email do usuário. 
-        When o codigo fo validado 
-        Then  definida uma nova senha para o usuário
-        
-    Scenario: Mudança de nome do usuario
-        Given o usuario "Rafael" quer mudar o nome para "Leo"
-        When seleciona a opção de mudar de nome
-        Then o sistema abre um pop-up que pede para colocar o nome novo 
-        And a senha 
-        Then é confirmado o nome novo
-    Reparo
-    Reparo
-    Reparo
+Scenario: Tentativa de login com e-mail não cadastrado
+Ideia geral: Após tentar realizar o login com um e-mail não cadastrado, 
+Then o usuário é impedido de realizar o login.
 
-Test 
-Test 
-Test
+Scenario: Redefinição de senha
+Ideia geral: Após selecionar a opção recuperar conta, 
+And o usuário é redirecionado para uma página de recuperação de conta que vai pedir o codigo enviado ao email do usuário. 
+When o codigo fo validado 
+Then  definida uma nova senha para o usuário
+
+Scenario: Mudança de nome do usuario
+Given o usuario "Rafael" quer mudar o nome para "Leo"
+When seleciona a opção de mudar de nome
+Then o sistema abre um pop-up que pede para colocar o nome novo 
+And a senha 
+Then é confirmado o nome novo
