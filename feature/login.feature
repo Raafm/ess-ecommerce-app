@@ -6,7 +6,7 @@ Feature: Login no aplicativo
 Scenario: Login correto
     Given Não estou logado com nenhum usuário na aplicação
         And existe um usuario cadastrado com o email "acruchi@gmail.com" e senha "123456"
-        And estou na página inicial e  "login"
+        And estou na página inicial de "login"
     When eu tento acessar o aplicatico com o email "acruchi@gmail.com"
         And com a senha "123456"
     Then o cliente é encaminhado para a tela inicial do aplicativo
@@ -14,23 +14,24 @@ Scenario: Login correto
 Scenario: Login admin
     Given Não estou logado com nenhum usuário na aplicação
         And existe um admin cadastrado com o email "admin@gmail.com" e senha "admin"
-        And estou na página inicial e "login"
+        And estou na página inicial de "login"
     When eu tento acessar o aplicatico com o email"admin@gmail.com"
         And com a senha "admin"
     Then o admin é encaminhado para a pagina do administrador
 
 Scenario: Login com a senha errada
     Given Não estou logado com nenhum usuário na aplicação
-           And existe um usuario cadastrado com o email "acruchi@gmail.com" e senha "123456"
-           And estou na página de "login"
+        And existe um usuario cadastrado com o email "acruchi@gmail.com" e senha "123456"
+        And estou na página de "login"
     When eu tento acessar o aplicatico com o email "acruchi@gmail.com"
         And o campo da senha é preenchido por "1234"
     Then eu recebo uma mensagem de erro dizendo que a senha está errada
         And eu continuo na página de login
 
 Scenario: Login com a email errado
-    Given Não estou logado com nenhum usuário na aplicação
-           And estou na página de "login"
+    Given Não estou logado com nenhum usuário na aplicação           
+        And existe um usuario cadastrado com o email "acruchi@gmail.com" e senha "123456"
+        And estou na página de "login"
     When eu tento acessar o aplicatico com o email "test@gmail.com"
         And o campo da senha é preenchido por "123456"
     Then eu recebo uma mensagem de erro dizendo que o email está incorreto
