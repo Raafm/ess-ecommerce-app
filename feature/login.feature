@@ -4,7 +4,7 @@ Feature: Login no aplicativo
     So that eu tenha acesso às funcionalidades do sistema que são acessíveis somente depois do login
 
 Scenario: Login correto
-    Given Não estou logado com nenhum usuário na aplicação
+    Given o cliente não está logado com nenhum usuário na aplicação
         And existe um usuario cadastrado com o email "acruchi@gmail.com" e senha "123456"
         And estou na página inicial de "login"
     When eu tento acessar o aplicatico com o email "acruchi@gmail.com"
@@ -12,7 +12,7 @@ Scenario: Login correto
     Then o cliente é encaminhado para a tela inicial do aplicativo
 
 Scenario: Login admin
-    Given Não estou logado com nenhum usuário na aplicação
+    Given o admin não está logado com nenhum usuário na aplicação
         And existe um admin cadastrado com o email "admin@gmail.com" e senha "admin"
         And estou na página inicial de "login"
     When eu tento acessar o aplicatico com o email"admin@gmail.com"
@@ -30,7 +30,6 @@ Scenario: Login com a senha errada
 
 Scenario: Login com a email errado
     Given Não estou logado com nenhum usuário na aplicação           
-        And existe um usuario cadastrado com o email "acruchi@gmail.com" e senha "123456"
         And estou na página de "login"
     When eu tento acessar o aplicatico com o email "test@gmail.com"
         And o campo da senha é preenchido por "123456"
@@ -40,7 +39,6 @@ Scenario: Login com a email errado
 
 Scenario: Esqueceu a senha
     Given Não estou logado com nenhum usuário na aplicação
-        And esqueci a senha
         And estou na página de "login"
     When seleciono na opção de Esqueceu a senha
     Then sou encaminhado para uma pagina de esqueci a senha
@@ -50,17 +48,16 @@ Scenario: Esqueceu a senha
 
 Scenario: Recuperar a senha com o codigo correto
     Given o usuario "acruchi" esta na pagina de recuperar a senha
+        And o código "3245" é válido para o usuário "acruchi"
     When o usuarrio tenta recupera a senha com o codigo "3245" 
-    Then seleciona no verificar
-        And confirma que o codigo esta correto
-        And pede uma nova senha
-    Then é encaminhado para a pagina de login 
+    Then uma nova senha é requisitada
+        And o usuário escolhe uma nova senha
+    Then é encaminhado para a pagina de login
 
 
 Scenario: Recuperar a senha com o codigo incorreto
     Given o usuario "acruchi" esta na pagina de recuperar a senha
         And o codigo de recuperar a senha eh "3245"
     When o usuarrio tenta recupera a senha com o codigo "3244" 
-    Then seleciona no verificar
-        And confirma que o codigo esta incorreto
+    Then uma mensagem de erro dizendo que o código está errado
     Then o ususario continua na pagina de recuperar a senha
