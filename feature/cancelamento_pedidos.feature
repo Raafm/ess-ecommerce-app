@@ -8,7 +8,7 @@ Eu preciso poder cancelar meus pedidos
 
 
 Scenario: Cancelar pedido logado porém sem digitar senha de confirmação.
-Given Eu estou na página “Meus pedidos” logado como usuário “Kennedy” e visualizando meu “Histórico de pedidos”
+Given Eu estou na página “Histórico de pedidos” logado como usuário “Kennedy” 
 And o pedido "143" existe no “Histórico de pedidos”
 When Eu tento cancelar o pedido “143”
 And eu não preencho o a senha e tento confirmar o cancelamento
@@ -17,7 +17,7 @@ And a senha é requisitada
 
 
 Scenario: Cancelar pedido logado porém digitando senha errada
-Given Eu estou na página “Meus pedidos” logado como usuário “Kennedy” e visualizando meu “Histórico de pedidos”
+Given Eu estou na página “Histórico de pedidos” logado como usuário “Kennedy”
 And o pedido "143" existe no “Histórico de pedidos”
 When Eu tento cancelar o pedido “143”
 And preencho com a senha “Eu odeio ESS” e tento confirmar o cancelamento
@@ -26,7 +26,7 @@ And a senha é requisitada
 
 
 Scenario: Cancelar pedido logado porém digitando senha certa
-Given Eu estou na página “Meus pedidos” logado como usuário “Kennedy” e visualizando meu “Histórico de pedidos”
+Given Eu estou na página “Histórico de pedidos” logado como usuário “Kennedy”
 And o pedido "143" existe no “Histórico de pedidos”
 When Eu tento cancelar o pedido “143”
 And preencho com a senha “Eu amo ESS” e tento confirmar o cancelamento
