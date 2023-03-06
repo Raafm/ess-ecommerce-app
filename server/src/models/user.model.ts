@@ -1,9 +1,10 @@
-class UserModel {
-  id: string;
+import BaseModel from './base.model';
+
+class UserModel extends BaseModel {
   name: string;
 
   constructor({ id, name }: { id: string; name: string }) {
-    this.id = id;
+    super(id);
     this.name = name;
   }
 }
