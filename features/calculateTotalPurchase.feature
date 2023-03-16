@@ -9,7 +9,7 @@ Na página de administração
 Eu quero ser capaz de ver a distribuição do numero de pessoas que fizeram certa quantidade de compras (e a mesma distribuição sendo o preço dessas compras).
 Para que eu possa ver como as pessoas em média se comportam na quantidade compras e seu preço
 
-feature: estatisticas de vendas
+Feature: estatisticas de vendas
 Como um usuário admin
 Na página de administração
 Eu quero ser capaz de ver a distribuição de numero de compras e total de preços no tempo, podendo filtrá-las no intervalo de tempo que eu quiser.
